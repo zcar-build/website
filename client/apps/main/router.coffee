@@ -1,9 +1,19 @@
 Backbone = require 'Backbone'
+FrontPage = require './views/FrontPage'
+ProductPage = require './views/ProductPage'
 
 class Router extends Backbone.Router
 
   routes:
-    '':                       'index'
+    'home':                       'index'
+
+    'productivity':           'showProductivity'
+    'utilities':              'showUtilities'
+    'education':              'showEducation'
+    'game':                   'showGame'
+    'opensource':             'showOpenSource'
+
+    'quiver':                 'showQuiver'
 
     # Default action
     '*actions':                 'index'
@@ -11,6 +21,33 @@ class Router extends Backbone.Router
   initialize: -> {}
 
   index: ->
-    logging.debug 'show index page'
+    p = new FrontPage()
+    app.layout.selectTab(null)
+    app.layout.showPage(p)
+
+
+  #
+  # Categories
+  #
+
+  showProductivity: ->
+    p = new ProductPage()
+    app.layout.selectTab('productivity')
+    app.layout.showPage(p)
+
+  showUtilities: ->
+    p = new ProductPage()
+    app.layout.selectTab('utilities')
+    app.layout.showPage(p)
+
+
+  #
+  # Product pages
+  #
+
+  quiver: ->
+    p = new ProductPage()
+    app.layout.selectTab('productivity')
+    app.layout.showPage(p)
 
 module.exports = Router

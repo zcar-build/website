@@ -4,21 +4,19 @@ class LayoutView extends Backbone.View
 
   template: _.template(require '../templates/LayoutView.html')
 
-  events:
-    'click .start-btn': 'getStarted'
+  events: {}
 
   initialize: ->
     @$el.html @template()
-    @$('.jumbotron').show()
-    @$('.getting-started').hide()
+    @currentPage = null
 
-  render: => @
+  selectTab: (tabName) ->
+    logging.debug "selectTab: #{tabName}"
 
-  setView: (v) ->
-    @$('#page-container').html v.render().el
-
-  getStarted: (e) ->
-    @$('.jumbotron').fadeOut 500, =>
-      @$('.getting-started').fadeIn()
+  showPage: (p) ->
+    @currentPage?.remove()
+    @$('footer').before p.render().el
+    p.$el.hide().fadeIn()
+    @currentPage = p
 
 module.exports = LayoutView
