@@ -10,8 +10,13 @@ class LayoutView extends Backbone.View
     @$el.html @template()
     @currentPage = null
 
-  selectTab: (tabName) ->
-    logging.debug "selectTab: #{tabName}"
+  selectTab: (tab) ->
+    if tab?
+      $tab = @$("li[data-tab='#{tab}']")
+      $tab.siblings().removeClass('active').attr('aria-selected', 'false')
+      $tab.addClass('active').attr('aria-selected', 'true')
+    else
+      @$('li[data-tab]').removeClass('active').attr('aria-selected', 'false')
 
   showPage: (p) ->
     @currentPage?.remove()
