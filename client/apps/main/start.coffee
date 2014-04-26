@@ -1,5 +1,6 @@
 Backbone = require 'Backbone'
 I18n = require 'muffin/I18n'
+require 'components/twbs/bootstrap/dist/js/bootstrap.js'
 
 start = ->
   # Set the locale
