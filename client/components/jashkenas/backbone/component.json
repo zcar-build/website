@@ -4,8 +4,8 @@
   "type": "script",
   "main": "backbone.js",
   "dependencies": {
-    "jashkenas/underscore": "1.5.2",
-    "components/jquery": "2.0.3"
+    "jashkenas/underscore": "1.6.0",
+    "components/jquery": "2.1.0"
   },
   "exports": "Backbone"
 }
