@@ -5,18 +5,21 @@ ProductPage = require './views/ProductPage'
 class Router extends Backbone.Router
 
   routes:
-    'home':                       'index'
+    'home':                   'index'
 
+    # Category pages
     'productivity':           'showProductivity'
     'utilities':              'showUtilities'
     'education':              'showEducation'
     'game':                   'showGame'
     'opensource':             'showOpenSource'
 
+    # Product pages
     'quiver':                 'showQuiver'
+    'hangman':                'showHangman'
 
     # Default action
-    '*actions':                 'index'
+    '*actions':               'index'
 
   initialize: -> {}
 
@@ -60,9 +63,14 @@ class Router extends Backbone.Router
   # Product pages
   #
 
-  quiver: ->
+  showQuiver: ->
     p = new ProductPage()
     app.layout.selectTab('productivity')
+    app.layout.showPage(p)
+
+  showHangman: ->
+    p = new ProductPage()
+    app.layout.selectTab('education')
     app.layout.showPage(p)
 
 module.exports = Router

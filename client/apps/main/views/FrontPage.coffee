@@ -8,6 +8,7 @@ class FrontPage extends Backbone.View
 
   initialize: ->
     @$el.html @template()
+    @$('#myCarousel').carousel({pause: false}).carousel('cycle')
 
   render: => @
 
