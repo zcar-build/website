@@ -91,6 +91,44 @@ body {
 
 
 
+/* Switcher */
+
+#switcher {
+  background: gray;
+  padding: 10px;
+  margin-bottom: 40px;
+
+  .product-group {
+    display: table;
+    margin: 0 auto;
+  }
+
+   .thumbnail {
+    width: 200px;
+    cursor: pointer;
+    margin: 0 10px;
+    display: inline-block;
+
+    &.active {
+      border: 2px solid blue;
+    }
+
+    img {
+      width: 120px;
+    }
+
+    .caption {
+      padding: 4px;
+
+      h3 {
+        font-size: 15px;
+        margin: 5px 0;
+      }
+    }
+  }
+}
+
+
 /* MARKETING CONTENT
 -------------------------------------------------- */
 
