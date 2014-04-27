@@ -16,7 +16,11 @@ class Router extends Backbone.Router
 
     # Product pages
     'quiver':                 'showQuiver'
+    'bussg':                  'showBusSG'
+    'sgshowtime':             'showSGShowtime'
     'hangman':                'showHangman'
+    'jumpingcarp':            'showJumpingCarp'
+    'muffin':                 'showMuffin'
 
     # Default action
     '*actions':               'index'
@@ -34,28 +38,23 @@ class Router extends Backbone.Router
   #
 
   showProductivity: ->
-    p = new ProductPage()
-    app.layout.selectTab('productivity')
+    p = new ProductPage({category: 'productivity'})
     app.layout.showPage(p)
 
   showUtilities: ->
-    p = new ProductPage()
-    app.layout.selectTab('utilities')
+    p = new ProductPage({category: 'utilities'})
     app.layout.showPage(p)
 
   showEducation: ->
-    p = new ProductPage()
-    app.layout.selectTab('education')
+    p = new ProductPage({category: 'education'})
     app.layout.showPage(p)
 
   showGame: ->
-    p = new ProductPage()
-    app.layout.selectTab('game')
+    p = new ProductPage({category: 'game'})
     app.layout.showPage(p)
 
   showOpenSource: ->
-    p = new ProductPage()
-    app.layout.selectTab('opensource')
+    p = new ProductPage({category: 'opensource'})
     app.layout.showPage(p)
 
 
@@ -64,13 +63,27 @@ class Router extends Backbone.Router
   #
 
   showQuiver: ->
-    p = new ProductPage()
-    app.layout.selectTab('productivity')
+    p = new ProductPage({product: 'quiver', category: 'productivity'})
+    app.layout.showPage(p)
+
+  showBusSG: ->
+    p = new ProductPage({product: 'bussg', category: 'utilities'})
+    app.layout.showPage(p)
+
+  showSGShowtime: ->
+    p = new ProductPage({product: 'sgshowtime', category: 'utilities'})
     app.layout.showPage(p)
 
   showHangman: ->
-    p = new ProductPage()
-    app.layout.selectTab('education')
+    p = new ProductPage({product: 'hangman', category: 'education'})
+    app.layout.showPage(p)
+
+  showJumpingCarp: ->
+    p = new ProductPage({product:'jumpingcarp', category: 'game'})
+    app.layout.showPage(p)
+
+  showMuffin: ->
+    p = new ProductPage({product: 'muffin', category: 'opensource'})
     app.layout.showPage(p)
 
 module.exports = Router

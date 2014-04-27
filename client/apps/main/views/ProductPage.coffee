@@ -7,7 +7,8 @@ class ProductPage extends Backbone.View
 
   events: {}
 
-  initialize: ->
+  initialize: (options) ->
+    app.layout.selectTab(options.category)
     @$el.html @template()
 
   render: => @
