@@ -1,5 +1,18 @@
 Backbone = require 'Backbone'
 
+# Explicitly require templates so they can be bundled into one file during `muffin minify`.
+require '../templates/productivity.html'
+require '../templates/utilities.html'
+require '../templates/education.html'
+require '../templates/game.html'
+require '../templates/opensource.html'
+require '../templates/quiver.html'
+require '../templates/bussg.html'
+require '../templates/sgshowtime.html'
+require '../templates/hangman.html'
+require '../templates/jumpingcarp.html'
+require '../templates/muffin.html'
+
 class ProductPage extends Backbone.View
 
   className: 'container marketing'
@@ -11,39 +24,12 @@ class ProductPage extends Backbone.View
     app.layout.selectTab(options.category)
 
   render: =>
-    # Explicitly require templates so they can be bundled into one file during `muffin minify`.
-    switch @options.category
-      when 'productivity'
-        categoryTemplate = _.template(require '../templates/productivity.html')
-      when 'utilities'
-        categoryTemplate = _.template(require '../templates/utilities.html')
-      when 'education'
-        categoryTemplate = _.template(require '../templates/education.html')
-      when 'game'
-        categoryTemplate = _.template(require '../templates/game.html')
-      when 'opensource'
-        categoryTemplate = _.template(require '../templates/opensource.html')
-
-    switch @options.product
-      when 'quiver'
-        productTemplate = _.template(require '../templates/quiver.html')
-      when 'bussg'
-        productTemplate = _.template(require '../templates/bussg.html')
-      when 'sgshowtime'
-        productTemplate = _.template(require '../templates/sgshowtime.html')
-      when 'hangman'
-        productTemplate = _.template(require '../templates/hangman.html')
-      when 'jumpingcarp'
-        productTemplate = _.template(require '../templates/jumpingcarp.html')
-      when 'muffin'
-        productTemplate = _.template(require '../templates/muffin.html')
-
+    categoryTemplate = _.template(require "../templates/#{@options.category}.html")
     @$el.html categoryTemplate()
+    @$('#switcher').hide() if @$('#switcher .thumbnail').length is 1
 
-    # if @$('#switcher .thumbnail').length is 1
-    #   @$('#switcher').hide()
-
-    if productTemplate?
+    if @options.product?
+      productTemplate = _.template(require "../templates/#{@options.product}.html")
       @$('#productarea').html productTemplate()
     else
       @$('#switcher .thumbnail:first').click()
