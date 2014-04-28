@@ -10,15 +10,13 @@ require '../templates/muffin.html'
 class ProductPage extends Backbone.View
 
   className: 'container marketing'
-  template: _.template('<div id="productarea"></div>')
 
   initialize: (@options) ->
     app.layout.selectTab(options.category)
-    @$el.html @template()
 
   render: =>
     productTemplate = _.template(require "../templates/#{@options.product}.html")
-    @$('#productarea').html productTemplate()
+    @$el.html productTemplate()
     @
 
 module.exports = ProductPage
