@@ -7,12 +7,6 @@ class Router extends Backbone.Router
   routes:
     'home':                   'index'
 
-    # Category pages
-    'productivity':           'showProductivity'
-    'utilities':              'showUtilities'
-    'education':              'showEducation'
-    'opensource':             'showOpenSource'
-
     # Product pages
     'quiver':                 'showQuiver'
     'bussg':                  'showBusSG'
@@ -28,27 +22,6 @@ class Router extends Backbone.Router
   index: ->
     p = new FrontPage()
     app.layout.selectTab(null)
-    app.layout.showPage(p)
-
-
-  #
-  # Categories
-  #
-
-  showProductivity: ->
-    p = new ProductPage({category: 'productivity'})
-    app.layout.showPage(p)
-
-  showUtilities: ->
-    p = new ProductPage({category: 'utilities'})
-    app.layout.showPage(p)
-
-  showEducation: ->
-    p = new ProductPage({category: 'education'})
-    app.layout.showPage(p)
-
-  showOpenSource: ->
-    p = new ProductPage({category: 'opensource'})
     app.layout.showPage(p)
 
 
