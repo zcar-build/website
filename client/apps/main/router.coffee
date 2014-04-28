@@ -11,7 +11,6 @@ class Router extends Backbone.Router
     'productivity':           'showProductivity'
     'utilities':              'showUtilities'
     'education':              'showEducation'
-    'game':                   'showGame'
     'opensource':             'showOpenSource'
 
     # Product pages
@@ -19,7 +18,6 @@ class Router extends Backbone.Router
     'bussg':                  'showBusSG'
     'sgshowtime':             'showSGShowtime'
     'hangman':                'showHangman'
-    'jumpingcarp':            'showJumpingCarp'
     'muffin':                 'showMuffin'
 
     # Default action
@@ -49,10 +47,6 @@ class Router extends Backbone.Router
     p = new ProductPage({category: 'education'})
     app.layout.showPage(p)
 
-  showGame: ->
-    p = new ProductPage({category: 'game'})
-    app.layout.showPage(p)
-
   showOpenSource: ->
     p = new ProductPage({category: 'opensource'})
     app.layout.showPage(p)
@@ -76,10 +70,6 @@ class Router extends Backbone.Router
 
   showHangman: ->
     p = new ProductPage({product: 'hangman', category: 'education'})
-    app.layout.showPage(p)
-
-  showJumpingCarp: ->
-    p = new ProductPage({product:'jumpingcarp', category: 'game'})
     app.layout.showPage(p)
 
   showMuffin: ->

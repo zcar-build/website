@@ -4,13 +4,11 @@ Backbone = require 'Backbone'
 require '../templates/productivity.html'
 require '../templates/utilities.html'
 require '../templates/education.html'
-require '../templates/game.html'
 require '../templates/opensource.html'
 require '../templates/quiver.html'
 require '../templates/bussg.html'
 require '../templates/sgshowtime.html'
 require '../templates/hangman.html'
-require '../templates/jumpingcarp.html'
 require '../templates/muffin.html'
 
 class ProductPage extends Backbone.View
