@@ -10,7 +10,7 @@
     "muffin/Logger": "*",
     "muffin/forms": "*",
     "components/jquery": {
-      "version": "2.1.0",
+      "version": "1.11.0",
       "type": "script",
       "main": "jquery.js",
       "exports": "$"
@@ -28,7 +28,7 @@
       "main": "backbone.js",
       "dependencies": {
         "jashkenas/underscore": "1.6.0",
-        "components/jquery": "2.1.0"
+        "components/jquery": "1.11.0"
       },
       "exports": "Backbone"
     },
