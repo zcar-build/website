@@ -6,9 +6,6 @@
     "javascripts/apps/main/start"
   ],
   "dependencies": {
-    "muffin/I18n": "*",
-    "muffin/Logger": "*",
-    "muffin/forms": "*",
     "components/jquery": {
       "version": "1.11.0",
       "type": "script",
