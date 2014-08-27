@@ -5,7 +5,6 @@ require '../templates/quiver.html'
 require '../templates/bussg.html'
 require '../templates/sgshowtime.html'
 require '../templates/hangman.html'
-require '../templates/muffin.html'
 
 class ProductPage extends Backbone.View
 
