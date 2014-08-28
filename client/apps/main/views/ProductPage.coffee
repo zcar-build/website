@@ -8,10 +8,8 @@ require '../templates/hangman.html'
 
 class ProductPage extends Backbone.View
 
-  className: 'container marketing'
-
-  initialize: (@options) ->
-    app.layout.selectTab(options.category)
+  initialize: (options) ->
+    @options = options
 
   render: =>
     productTemplate = _.template(require "../templates/#{@options.product}.html")

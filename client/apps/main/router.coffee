@@ -9,10 +9,9 @@ class Router extends Backbone.Router
 
     # Product pages
     'quiver':                 'showQuiver'
+    'hangman':                'showHangman'
     'bussg':                  'showBusSG'
     'sgshowtime':             'showSGShowtime'
-    'hangman':                'showHangman'
-    'muffin':                 'showMuffin'
 
     # Default action
     '*actions':               'index'
@@ -30,23 +29,23 @@ class Router extends Backbone.Router
   #
 
   showQuiver: ->
-    p = new ProductPage({product: 'quiver', category: 'productivity'})
-    app.layout.showPage(p)
-
-  showBusSG: ->
-    p = new ProductPage({product: 'bussg', category: 'utilities'})
-    app.layout.showPage(p)
-
-  showSGShowtime: ->
-    p = new ProductPage({product: 'sgshowtime', category: 'utilities'})
+    p = new ProductPage({product: 'quiver'})
+    app.layout.selectTab 'quiver'
     app.layout.showPage(p)
 
   showHangman: ->
-    p = new ProductPage({product: 'hangman', category: 'education'})
+    p = new ProductPage({product: 'hangman'})
+    app.layout.selectTab 'hangman'
     app.layout.showPage(p)
 
-  showMuffin: ->
-    p = new ProductPage({product: 'muffin', category: 'opensource'})
+  showBusSG: ->
+    p = new ProductPage({product: 'bussg'})
+    app.layout.selectTab 'bussg'
+    app.layout.showPage(p)
+
+  showSGShowtime: ->
+    p = new ProductPage({product: 'sgshowtime'})
+    app.layout.selectTab 'sgshowtime'
     app.layout.showPage(p)
 
 module.exports = Router
