@@ -21,7 +21,6 @@ class LayoutView extends Backbone.View
   showPage: (p) ->
     @currentPage?.remove()
     @$('footer').before p.render().el
-    p.$el.hide().fadeIn()
     @currentPage = p
 
 module.exports = LayoutView
