@@ -1,6 +1,7 @@
 Backbone = require 'Backbone'
 FrontPage = require './views/FrontPage'
 ProductPage = require './views/ProductPage'
+PrivacyPage = require './views/PrivacyPage'
 
 class Router extends Backbone.Router
 
@@ -12,6 +13,9 @@ class Router extends Backbone.Router
     'hangman':                'showHangman'
     'bussg':                  'showBusSG'
     'sgshowtime':             'showSGShowtime'
+
+    # Privacy policy
+    'privacy':                'showPrivacyPolicy'
 
     # Default action
     '*actions':               'index'
@@ -42,5 +46,14 @@ class Router extends Backbone.Router
   showSGShowtime: ->
     p = new ProductPage({product: 'sgshowtime', el: $('.content-area')[0]})
     app.layout.selectTab 'sgshowtime'
+
+
+  #
+  # Privacy Polcy
+  #
+
+  showPrivacyPolicy: ->
+    p = new PrivacyPage({el: $('.content-area')[0]})
+    app.layout.selectTab(null)
 
 module.exports = Router
