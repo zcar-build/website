@@ -11,9 +11,15 @@ class ProductPage extends Backbone.View
   initialize: (options) ->
     @options = options
 
-  render: =>
     productTemplate = _.template(require "../templates/#{@options.product}.html")
     @$el.html productTemplate()
-    @
+
+    @$('.thumbnail').on 'click', ->
+      $('#myModal').modal {show: true}
+      $('.modal-body').html """
+        <img src="images/quiver/screenshot3.png" alt="">
+      """
+
+  render: => @
 
 module.exports = ProductPage

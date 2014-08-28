@@ -19,9 +19,8 @@ class Router extends Backbone.Router
   initialize: -> {}
 
   index: ->
-    p = new FrontPage()
+    p = new FrontPage({el: $('.content-area')[0]})
     app.layout.selectTab(null)
-    app.layout.showPage(p)
 
 
   #
@@ -29,23 +28,19 @@ class Router extends Backbone.Router
   #
 
   showQuiver: ->
-    p = new ProductPage({product: 'quiver'})
+    p = new ProductPage({product: 'quiver', el: $('.content-area')[0]})
     app.layout.selectTab 'quiver'
-    app.layout.showPage(p)
 
   showHangman: ->
-    p = new ProductPage({product: 'hangman'})
+    p = new ProductPage({product: 'hangman', el: $('.content-area')[0]})
     app.layout.selectTab 'hangman'
-    app.layout.showPage(p)
 
   showBusSG: ->
-    p = new ProductPage({product: 'bussg'})
+    p = new ProductPage({product: 'bussg', el: $('.content-area')[0]})
     app.layout.selectTab 'bussg'
-    app.layout.showPage(p)
 
   showSGShowtime: ->
-    p = new ProductPage({product: 'sgshowtime'})
+    p = new ProductPage({product: 'sgshowtime', el: $('.content-area')[0]})
     app.layout.selectTab 'sgshowtime'
-    app.layout.showPage(p)
 
 module.exports = Router

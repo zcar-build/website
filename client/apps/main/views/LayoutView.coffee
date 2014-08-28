@@ -8,7 +8,6 @@ class LayoutView extends Backbone.View
 
   initialize: ->
     @$el.html @template()
-    @currentPage = null
 
   selectTab: (tab) ->
     if tab?
@@ -17,10 +16,5 @@ class LayoutView extends Backbone.View
       $tab.addClass('active').attr('aria-selected', 'true')
     else
       @$('li[data-tab]').removeClass('active').attr('aria-selected', 'false')
-
-  showPage: (p) ->
-    @currentPage?.remove()
-    @$('footer').before p.render().el
-    @currentPage = p
 
 module.exports = LayoutView
