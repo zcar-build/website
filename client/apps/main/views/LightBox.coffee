@@ -8,10 +8,10 @@ class LightBox extends Backbone.View
 
   initialize: ->
     @$el.html @template()
-    @$('.modal-body').html """
-        <img src="images/quiver/screenshot1.jpg" alt="">
-      """
     @$el.modal {show: true}
+
+    @album = []
+    @currentImageIndex = -1
 
   render: => @
 
