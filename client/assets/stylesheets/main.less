@@ -1,5 +1,6 @@
 @import "prefixer.less";
 
+
 /* GLOBAL STYLES
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
@@ -9,18 +10,44 @@ body {
   color: #5a5a5a;
 }
 
+
+/* Header
+------------------ */
+
 .navbar-brand img {
   height: 21px;
   margin-right: 2px;
   margin-top: -3px;
 }
 
-.content-area {
-  margin: 50px 0 0;
+
+/* Content
+----------------- */
+
+#content {
+  margin-top: 50px;
 }
 
-.banner-image {
-  margin-top: 30px;
+/* Jumbotron */
+.jumbotron.quiver {
+  background: #275E99;
+  color: #dfdfdf;
+  padding-top: 100px;
+  padding-bottom: 110px;
+
+  h1 {
+    margin-bottom: 20px;
+
+    img {
+      max-width: 120px;
+      margin-top: -64px;
+    }
+  }
+
+  h3 {
+    font-weight: normal;
+    padding-bottom: 20px;
+  }
 }
 
 img.bordered {
@@ -28,7 +55,7 @@ img.bordered {
 }
 
 .screenshot-container {
-  margin-top: -160px;
+  margin-top: -130px;
 }
 
 
@@ -83,19 +110,6 @@ img.bordered {
   background: none;
 }
 
-
-/* Jumbotron */
-.jumbotron {
-  background: #275E99;
-  color: #dfdfdf;
-  padding-top: 100px;
-  height: 400px;
-
-  h1 img {
-    max-width: 120px;
-    margin-right: 20px;
-  }
-}
 
 /* Featurettes
 ------------------------- */
