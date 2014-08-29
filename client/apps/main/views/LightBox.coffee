@@ -28,19 +28,33 @@ class LightBox extends Backbone.View
 
   render: => @
 
+  updateNavButtons: ->
+    if @currentImageIndex <= 0
+      @$('.lb-prev').hide()
+    else
+      @$('.lb-prev').show()
+
+    if @currentImageIndex >= @images.length - 1
+      @$('.lb-next').hide()
+    else
+      @$('.lb-next').show()
+
   showAlbum: (images, currentImageIndex) =>
     @currentImageIndex = currentImageIndex
     @images = images
+    @updateNavButtons()
     @$('.modal-body img').attr('src', @images[@currentImageIndex])
 
   showPrevious: =>
     return if @currentImageIndex <= 0
     @currentImageIndex -= 1
+    @updateNavButtons()
     @$('.modal-body img').attr('src', @images[@currentImageIndex])
 
   showNext: =>
     return if @currentImageIndex >= @images.length - 1
     @currentImageIndex += 1
+    @updateNavButtons()
     @$('.modal-body img').attr('src', @images[@currentImageIndex])
 
   dismiss: =>
