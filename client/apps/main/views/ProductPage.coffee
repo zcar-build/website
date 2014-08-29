@@ -17,7 +17,7 @@ class ProductPage extends Backbone.View
     @$('.thumbnail').on 'click', ->
       $('#myModal').modal {show: true}
       $('.modal-body').html """
-        <img src="images/quiver/screenshot3.png" alt="">
+        <img src="images/quiver/screenshot1.jpg" alt="">
       """
 
   render: => @
