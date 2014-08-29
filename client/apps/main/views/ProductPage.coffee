@@ -15,8 +15,12 @@ class ProductPage extends Backbone.View
     productTemplate = _.template(require "../templates/#{@options.product}.html")
     @$el.html productTemplate()
 
-    @$('.thumbnail').on 'click', ->
+    images = @$('.thumbnail img').map(-> $(this).attr('src')).get()
+    @$('.thumbnail').on 'click', (e) ->
       lightBox = new LightBox({el: $('#modal-container')[0]})
+      index = $(e.currentTarget).closest('.col-md-4').index()
+      console.log index
+      lightBox.showAlbum(images, index)
 
   render: => @
 

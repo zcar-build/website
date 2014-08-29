@@ -1,0 +1,6 @@
+{
+  "version": "*",
+  "type": "script",
+  "main": "keymaster.js",
+  "name": "keymaster"
+}

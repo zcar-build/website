@@ -29,6 +29,20 @@
       },
       "exports": "Backbone"
     },
+    "madrobby/keymaster": {
+      "version": "*",
+      "type": "script",
+      "main": "keymaster.js"
+    },
+    "bry4n/backbone-shortcuts": {
+      "version": "*",
+      "type": "script",
+      "main": "backbone.shortcuts.js",
+      "dependencies": {
+        "jashkenas/backbone": "*",
+        "madrobby/keymaster": "*"
+      }
+    },
     "twbs/bootstrap": {
       "version": "v3.1.1",
       "files": [
