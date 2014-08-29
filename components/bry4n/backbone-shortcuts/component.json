@@ -1,0 +1,10 @@
+{
+  "version": "*",
+  "type": "script",
+  "main": "backbone.shortcuts.js",
+  "dependencies": {
+    "jashkenas/backbone": "*",
+    "madrobby/keymaster": "*"
+  },
+  "name": "backbone-shortcuts"
+}
