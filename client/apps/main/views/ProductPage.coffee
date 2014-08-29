@@ -1,4 +1,5 @@
 Backbone = require 'Backbone'
+LightBox = require './LightBox'
 
 # Explicitly require templates so they can be bundled into one file during `muffin minify`.
 require '../templates/quiver.html'
@@ -15,10 +16,7 @@ class ProductPage extends Backbone.View
     @$el.html productTemplate()
 
     @$('.thumbnail').on 'click', ->
-      $('#myModal').modal {show: true}
-      $('.modal-body').html """
-        <img src="images/quiver/screenshot1.jpg" alt="">
-      """
+      lightBox = new LightBox({el: $('#modal-container')[0]})
 
   render: => @
 
