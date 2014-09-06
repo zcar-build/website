@@ -22,6 +22,10 @@ class ProductPage extends Backbone.View
       index = $(e.currentTarget).closest('.col-md-4').index()
       lightBox.showAlbum(images, index)
 
+    @$('.download').on 'click', (e) ->
+      label = $(e.currentTarget).attr('data-value')
+      ga 'send', 'event', 'button', 'click', label
+
   render: => @
 
 module.exports = ProductPage
