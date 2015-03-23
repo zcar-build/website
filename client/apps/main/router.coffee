@@ -12,7 +12,6 @@ class Router extends Backbone.Router
     'quiver':                 'showQuiver'
     'hangman':                'showHangman'
     'bussg':                  'showBusSG'
-    'sgshowtime':             'showSGShowtime'
 
     # Privacy policy
     'privacy':                'showPrivacyPolicy'
@@ -46,11 +45,6 @@ class Router extends Backbone.Router
     p = new ProductPage({product: 'bussg', el: $('#content-container')[0]})
     $(window).scrollTop(0)
     app.layout.selectTab 'bussg'
-
-  showSGShowtime: ->
-    p = new ProductPage({product: 'sgshowtime', el: $('#content-container')[0]})
-    $(window).scrollTop(0)
-    app.layout.selectTab 'sgshowtime'
 
 
   #
