@@ -9,6 +9,10 @@ class LayoutView extends Backbone.View
   initialize: ->
     @$el.html @template()
 
+    # Collapse the navbar on click (https://github.com/twbs/bootstrap/issues/9013#issuecomment-23590508)
+    $(document).on 'click', '.navbar-collapse.in', (e) ->
+      if $(e.target).is('a') then $(@).collapse('hide')
+
   selectTab: (tab) ->
     if tab?
       $tab = @$("li[data-tab='#{tab}']")
