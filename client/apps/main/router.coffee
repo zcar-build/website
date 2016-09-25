@@ -1,7 +1,6 @@
 Backbone = require 'Backbone'
 FrontPage = require './views/FrontPage'
 ProductPage = require './views/ProductPage'
-PrivacyPage = require './views/PrivacyPage'
 
 class Router extends Backbone.Router
 
@@ -11,9 +10,6 @@ class Router extends Backbone.Router
     # Product pages
     'quiver':                 'showQuiver'
     'bussg':                  'showBusSG'
-
-    # Privacy policy
-    'privacy':                'showPrivacyPolicy'
 
     # Default action
     '*actions':               'index'
@@ -39,15 +35,5 @@ class Router extends Backbone.Router
     p = new ProductPage({product: 'bussg', el: $('#content-container')[0]})
     $(window).scrollTop(0)
     app.layout.selectTab 'bussg'
-
-
-  #
-  # Privacy Polcy
-  #
-
-  showPrivacyPolicy: ->
-    p = new PrivacyPage({el: $('#content-container')[0]})
-    $(window).scrollTop(0)
-    app.layout.selectTab(null)
 
 module.exports = Router
