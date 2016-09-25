@@ -10,7 +10,6 @@ class Router extends Backbone.Router
 
     # Product pages
     'quiver':                 'showQuiver'
-    'hangman':                'showHangman'
     'bussg':                  'showBusSG'
 
     # Privacy policy
@@ -35,11 +34,6 @@ class Router extends Backbone.Router
     p = new ProductPage({product: 'quiver', el: $('#content-container')[0]})
     $(window).scrollTop(0)
     app.layout.selectTab 'quiver'
-
-  showHangman: ->
-    p = new ProductPage({product: 'hangman', el: $('#content-container')[0]})
-    $(window).scrollTop(0)
-    app.layout.selectTab 'hangman'
 
   showBusSG: ->
     p = new ProductPage({product: 'bussg', el: $('#content-container')[0]})

@@ -75,13 +75,6 @@ img.bordered {
   }
 }
 
-.jumbotron.hangman {
-  background: #FF6600;
-  color: #FAFAFA;
-  padding-top: 132px;
-  padding-bottom: 72px;
-}
-
 .jumbotron.bussg {
   background: #5081B8;
   color: #eee;
@@ -201,6 +194,14 @@ img.bordered {
   height: 600px;
   background-color: #777;
 
+  &.quiver {
+    background-image: url('/images/quiver/El-Capitan.jpg');
+  }
+
+  &.bussg {
+    background-color: #ff5f5f;
+  }
+
   .thumbnail > img {
     .box-shadow(0px 10px 50px 0px rgba(50, 50, 50, 1.0));
   }
@@ -258,6 +259,10 @@ img.bordered {
 @media (max-width: 480px) {
   .carousel .item {
     height: 400px;
+
+    .thumbnail > img {
+      max-height: 260px;
+    }
   }
 
   .carousel-caption {
@@ -295,6 +300,10 @@ img.bordered {
 
   .carousel .item {
     height: 600px;
+
+    .thumbnail > img {
+      max-height: 400px;
+    }
   }
 }
 
@@ -338,7 +347,7 @@ img.bordered {
   .navbar-wrapper .navbar {
     border-radius: 4px;
   }
-  
+
   .carousel-caption {
     left: 10%;
     right: 10%;
