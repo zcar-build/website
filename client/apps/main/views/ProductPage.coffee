@@ -3,6 +3,7 @@ LightBox = require './LightBox'
 
 # Explicitly require templates so they can be bundled into one file during `muffin minify`.
 require '../templates/quiver.html'
+require '../templates/quiver-ios.html'
 require '../templates/bussg.html'
 
 class ProductPage extends Backbone.View
