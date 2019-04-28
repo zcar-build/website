@@ -25,6 +25,9 @@ class ProductPage extends Backbone.View
       label = $(e.currentTarget).attr('data-value')
       ga 'send', 'event', 'button', 'click', label
 
+    if (navigator.userAgent.indexOf("Firefox") > -1)
+      @$('.qwt').attr("href", "https://addons.mozilla.org/en-US/firefox/addon/quiver-web-clipper/")
+
   render: => @
 
 module.exports = ProductPage
