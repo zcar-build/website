@@ -1,6 +1,7 @@
 Backbone = require 'Backbone'
 ProductPage = require './views/ProductPage'
 PrivacyPage = require './views/PrivacyPage'
+PrivacyPage2 = require './views/PrivacyPage2'
 
 class Router extends Backbone.Router
 
@@ -12,6 +13,7 @@ class Router extends Backbone.Router
 
     # Privacy policy
     'privacy':                'showPrivacyPolicy'
+    'privacy2':               'showPrivacyPolicy2'
 
     # Default action
     '*actions':               'showQuiver'
@@ -40,6 +42,11 @@ class Router extends Backbone.Router
 
   showPrivacyPolicy: ->
     p = new PrivacyPage({el: $('#content-container')[0]})
+    $(window).scrollTop(0)
+    app.layout.selectTab(null)
+
+  showPrivacyPolicy2: ->
+    p = new PrivacyPage2({el: $('#content-container')[0]})
     $(window).scrollTop(0)
     app.layout.selectTab(null)
 
